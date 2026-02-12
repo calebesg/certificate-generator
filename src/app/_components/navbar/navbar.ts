@@ -12,6 +12,6 @@ export class Navbar implements OnInit {
   }
 
   mensagem() {
-    console.log("Componente Inicializado com Sucesso!");
+    //console.log("Componente Inicializado com Sucesso!");
   }
 }
