@@ -60,3 +60,9 @@
     letter-spacing: 0;
     color: #64748B;
 }
+
+.lista-certificados {
+    width: 100%;
+    max-width: 672px;
+    justify-self: center;
+}
