@@ -46,6 +46,28 @@ div:has(input:focus) label {
     color: #64748B;
 }
 
+.input-error {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #D71D1D;
+}
+
+.input-error p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+div:has(.input-error) input {
+    border: 1px solid #D71D1D;
+}
+
+div:has(.input-error) label {
+    color: #D71D1D;
+}
+
 .activities-list {
     width: 100%;
     gap: 12px;
