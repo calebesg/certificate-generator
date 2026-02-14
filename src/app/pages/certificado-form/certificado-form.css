@@ -17,6 +17,10 @@
     margin-bottom: 20px;
 }
 
+div:has(input:focus) label {
+    color: #3B5AC2;
+}
+
 .custom-label {
     font-weight: 500;
     font-size: 14px;
@@ -31,6 +35,11 @@
     padding: 8px 12px;
     color: #121621;
     height: 40px;
+}
+
+.custom-input:focus {
+    box-shadow: none;
+    border: 1px solid #3B5AC2;
 }
 
 .custom-input::placeholder {
