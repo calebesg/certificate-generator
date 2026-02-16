@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './base-ui.html',
   styleUrl: './base-ui.css',
 })
-export class BaseUi {
-
-}
+export class BaseUi {}

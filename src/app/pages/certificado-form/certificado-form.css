@@ -1,104 +1,104 @@
 .custom-card {
-    width: 100%;
-    max-width: 672px;
-    justify-self: center;
-    padding: 32px;
-    gap: 32px;
-    border-radius: 8px;
-    border: 1px solid #E2E8F0;
+  width: 100%;
+  max-width: 672px;
+  justify-self: center;
+  padding: 32px;
+  gap: 32px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
 }
 
 .form-title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0;
-    color: #1A2856;
-    margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #1a2856;
+  margin-bottom: 20px;
 }
 
 div:has(input:focus) label {
-    color: #3B5AC2;
+  color: #3b5ac2;
 }
 
 .custom-label {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0;
-    color: #1A2856;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #1a2856;
 }
 
 .custom-input {
-    border: 1px solid #E2E8F0;
-    border-radius: 6px;
-    padding: 8px 12px;
-    color: #121621;
-    height: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #121621;
+  height: 40px;
 }
 
 .custom-input:focus {
-    box-shadow: none;
-    border: 1px solid #3B5AC2;
+  box-shadow: none;
+  border: 1px solid #3b5ac2;
 }
 
 .custom-input::placeholder {
-    color: #64748B;
+  color: #64748b;
 }
 
 .input-error {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: #D71D1D;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #d71d1d;
 }
 
 .input-error p {
-    margin: 0;
-    font-size: 12px;
-    font-weight: 400;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 div:has(.input-error) input {
-    border: 1px solid #D71D1D;
+  border: 1px solid #d71d1d;
 }
 
 div:has(.input-error) label {
-    color: #D71D1D;
+  color: #d71d1d;
 }
 
 .activities-list {
-    width: 100%;
-    gap: 12px;
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid #E2E8F0;
+  width: 100%;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
 }
 
 .activities-list--item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #121621;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #121621;
 }
 
 .activities-list--item:not(:last-child) {
-    border-bottom: 1px solid #E2E8F0;
-    padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 12px;
 }
 
 .activities-list--item:not(:first-child) {
-    padding-top: 12px;
+  padding-top: 12px;
 }
 
 .activities-list--item i {
-    font-size: 20px;
-    color: #E95F5F;
-    cursor: pointer;
-    border-radius: 4px;
+  font-size: 20px;
+  color: #e95f5f;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 .activities-list--item i:hover {
-    background-color: #E2E8F0;
+  background-color: #e2e8f0;
 }

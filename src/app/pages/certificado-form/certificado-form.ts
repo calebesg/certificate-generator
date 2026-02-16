@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SecondaryButton } from "../../_components/secondary-button/secondary-button";
-import { PrimaryButton } from "../../_components/primary-button/primary-button";
+import { SecondaryButton } from '../../_components/secondary-button/secondary-button';
+import { PrimaryButton } from '../../_components/primary-button/primary-button';
 
 @Component({
   selector: 'app-certificado-form',
@@ -8,6 +8,4 @@ import { PrimaryButton } from "../../_components/primary-button/primary-button";
   templateUrl: './certificado-form.html',
   styleUrl: './certificado-form.css',
 })
-export class CertificadoForm {
-
-}
+export class CertificadoForm {}
