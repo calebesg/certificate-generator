@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SecondaryButton } from '../secondary-button/secondary-button';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-item-certificado',
@@ -9,5 +9,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './item-certificado.css',
 })
 export class ItemCertificado {
-  id: Number = 1;
+  id: number = 1;
+
+  constructor(private router: Router) {}
+
+  goToCertificado() {
+    this.router.navigate(['certificado', this.id]);
+  }
 }
