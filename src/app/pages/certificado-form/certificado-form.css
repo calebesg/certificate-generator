@@ -64,7 +64,7 @@ div:has(.input-error) input {
   border: 1px solid #d71d1d;
 }
 
-div:has(.input-error) label {
+.text-error-color {
   color: #d71d1d;
 }
 

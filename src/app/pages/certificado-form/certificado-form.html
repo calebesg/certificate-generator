@@ -3,37 +3,55 @@
   <p class="mb-4 custom-subtitle">Preencha os campos para gerar um novo certificado</p>
 </div>
 
-<form class="custom-card">
+<form #form="ngForm" novalidate class="custom-card">
   <fieldset>
     <legend class="form-title">Novo certificado</legend>
 
     <div class="mb-3">
       <label for="" class="form-label custom-label">Nome</label>
       <input
-        name="name"
+        #nameRef="ngModel"
         [(ngModel)]="name"
+        name="name"
+        maxlength="150"
         type="text"
         class="form-control custom-input"
         placeholder="Digite o nome completo do aluno"
+        required
       />
-      <div class="input-error">
-        <i class="ph ph-warning-circle"></i>
-        <p>Error message</p>
-      </div>
+
+      @if (isNotValidField(nameRef)) {
+        <div class="input-error">
+          <i class="ph ph-warning-circle"></i>
+          <p>O nome do aluno é obrigatório</p>
+        </div>
+      }
     </div>
 
     <div class="mb-3 d-flex align-items-end">
       <div class="flex-grow-1 me-2">
         <label for="" class="form-label custom-label">Atividade</label>
         <input
-          name="activity"
+          #activityRef="ngModel"
           [(ngModel)]="activity"
+          name="activity"
+          maxlength="50"
           type="text"
           class="form-control custom-input"
           placeholder="Digite o título da atividade"
+          required
         />
+
+        @if (isNotValidField(activityRef)) {
+          <div class="input-error">
+            <i class="ph ph-warning-circle"></i>
+            <p>O nome da atividade é obrigatório</p>
+          </div>
+        }
       </div>
-      <app-secondary-button></app-secondary-button>
+      <app-secondary-button
+        [ngStyle]="isNotValidField(activityRef) ? { 'margin-bottom': '26px' } : {}"
+      ></app-secondary-button>
     </div>
 
     <div class="atividade-group">
