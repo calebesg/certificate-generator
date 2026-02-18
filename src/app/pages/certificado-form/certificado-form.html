@@ -10,6 +10,8 @@
     <div class="mb-3">
       <label for="" class="form-label custom-label">Nome</label>
       <input
+        name="name"
+        [(ngModel)]="name"
         type="text"
         class="form-control custom-input"
         placeholder="Digite o nome completo do aluno"
@@ -24,6 +26,8 @@
       <div class="flex-grow-1 me-2">
         <label for="" class="form-label custom-label">Atividade</label>
         <input
+          name="activity"
+          [(ngModel)]="activity"
           type="text"
           class="form-control custom-input"
           placeholder="Digite o título da atividade"
@@ -35,14 +39,12 @@
     <div class="atividade-group">
       <label for="" class="form-label custom-label">Lista de atividades</label>
       <ul class="activities-list">
-        <li class="activities-list--item">
-          <span>Introdução ao Angula</span>
-          <i class="ph ph-x"></i>
-        </li>
-        <li class="activities-list--item">
-          <span>Introdução ao Angula</span>
-          <i class="ph ph-x"></i>
-        </li>
+        @for (activity of activities; track $index) {
+          <li class="activities-list--item">
+            <span>{{ activity }}</span>
+            <i class="ph ph-x"></i>
+          </li>
+        }
       </ul>
     </div>
 
