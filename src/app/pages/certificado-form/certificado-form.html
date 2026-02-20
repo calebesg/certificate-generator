@@ -42,7 +42,7 @@
           required
         />
 
-        @if (isNotValidField(activityRef)) {
+        @if (isNotValidField(activityRef) && activities.length == 0) {
           <div class="input-error">
             <i class="ph ph-warning-circle"></i>
             <p>O nome da atividade é obrigatório</p>
@@ -50,7 +50,12 @@
         }
       </div>
       <app-secondary-button
-        [ngStyle]="isNotValidField(activityRef) ? { 'margin-bottom': '26px' } : {}"
+        textButton="Adicionar"
+        phClass="ph ph-plus"
+        [disabled]="true"
+        [ngStyle]="
+          isNotValidField(activityRef) && activities.length == 0 ? { 'margin-bottom': '26px' } : {}
+        "
       ></app-secondary-button>
     </div>
 
@@ -66,6 +71,9 @@
       </ul>
     </div>
 
-    <app-primary-button></app-primary-button>
+    <app-primary-button
+      [disabled]="isNotValidForm()"
+      textButton="Gerar certificado"
+    ></app-primary-button>
   </fieldset>
 </form>
