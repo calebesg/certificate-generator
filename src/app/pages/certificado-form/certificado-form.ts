@@ -3,6 +3,7 @@ import { SecondaryButton } from '../../_components/secondary-button/secondary-bu
 import { PrimaryButton } from '../../_components/primary-button/primary-button';
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule, NgStyle } from '@angular/common';
+import { Certificado } from '../../interfaces/certificado';
 
 @Component({
   selector: 'app-certificado-form',
@@ -11,21 +12,23 @@ import { CommonModule, NgStyle } from '@angular/common';
   styleUrl: './certificado-form.css',
 })
 export class CertificadoForm {
-  name: string = '';
+  certificado: Certificado = {
+    name: '',
+    activities: [],
+  };
   activity: string = '';
-  activities: string[] = ['Angular', 'React'];
 
   addActivity() {
-    let existActivity: boolean = this.activities.includes(this.activity);
+    let existActivity: boolean = this.certificado.activities.includes(this.activity);
 
     if (existActivity) return alert('A atividade já está foi adicinada');
 
-    this.activities = [...this.activities, this.activity];
+    this.certificado.activities = [...this.certificado.activities, this.activity];
     this.activity = '';
   }
 
   removeActivity(id: number) {
-    this.activities = this.activities.filter((_, index) => index != id);
+    this.certificado.activities = this.certificado.activities.filter((_, index) => index != id);
   }
 
   isNotValidField(control: NgModel) {
@@ -33,6 +36,12 @@ export class CertificadoForm {
   }
 
   isNotValidForm() {
-    return !(this.activities.length > 0 && this.name.length > 0);
+    return !(this.certificado.activities.length > 0 && this.certificado.name.length > 0);
+  }
+
+  submit() {
+    if (this.isNotValidForm()) return;
+
+    console.log(this.certificado);
   }
 }

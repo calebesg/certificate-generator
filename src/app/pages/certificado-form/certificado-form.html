@@ -11,7 +11,7 @@
       <label for="" class="form-label custom-label">Nome</label>
       <input
         #nameRef="ngModel"
-        [(ngModel)]="name"
+        [(ngModel)]="certificado.name"
         name="name"
         maxlength="150"
         type="text"
@@ -42,7 +42,7 @@
           required
         />
 
-        @if (isNotValidField(activityRef) && activities.length == 0) {
+        @if (isNotValidField(activityRef) && certificado.activities.length == 0) {
           <div class="input-error">
             <i class="ph ph-warning-circle"></i>
             <p>O nome da atividade é obrigatório</p>
@@ -55,7 +55,9 @@
         (click)="addActivity()"
         [disabled]="activity.length == 0"
         [ngStyle]="
-          isNotValidField(activityRef) && activities.length == 0 ? { 'margin-bottom': '26px' } : {}
+          isNotValidField(activityRef) && certificado.activities.length == 0
+            ? { 'margin-bottom': '26px' }
+            : {}
         "
       ></app-secondary-button>
     </div>
@@ -63,7 +65,7 @@
     <div class="atividade-group">
       <label for="" class="form-label custom-label">Lista de atividades</label>
       <ul class="activities-list">
-        @for (activity of activities; track $index) {
+        @for (activity of certificado.activities; track $index) {
           <li (click)="removeActivity($index)" class="activities-list--item">
             <span>{{ activity }}</span>
             <i class="ph ph-x"></i>
@@ -73,6 +75,7 @@
     </div>
 
     <app-primary-button
+      (click)="submit()"
       [disabled]="isNotValidForm()"
       textButton="Gerar certificado"
     ></app-primary-button>
