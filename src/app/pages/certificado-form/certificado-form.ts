@@ -15,6 +15,19 @@ export class CertificadoForm {
   activity: string = '';
   activities: string[] = ['Angular', 'React'];
 
+  addActivity() {
+    let existActivity: boolean = this.activities.includes(this.activity);
+
+    if (existActivity) return alert('A atividade já está foi adicinada');
+
+    this.activities = [...this.activities, this.activity];
+    this.activity = '';
+  }
+
+  removeActivity(id: number) {
+    this.activities = this.activities.filter((_, index) => index != id);
+  }
+
   isNotValidField(control: NgModel) {
     return control.invalid && control.touched;
   }

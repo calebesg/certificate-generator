@@ -52,7 +52,8 @@
       <app-secondary-button
         textButton="Adicionar"
         phClass="ph ph-plus"
-        [disabled]="true"
+        (click)="addActivity()"
+        [disabled]="activity.length == 0"
         [ngStyle]="
           isNotValidField(activityRef) && activities.length == 0 ? { 'margin-bottom': '26px' } : {}
         "
@@ -63,7 +64,7 @@
       <label for="" class="form-label custom-label">Lista de atividades</label>
       <ul class="activities-list">
         @for (activity of activities; track $index) {
-          <li class="activities-list--item">
+          <li (click)="removeActivity($index)" class="activities-list--item">
             <span>{{ activity }}</span>
             <i class="ph ph-x"></i>
           </li>
