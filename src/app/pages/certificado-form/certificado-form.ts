@@ -4,6 +4,7 @@ import { PrimaryButton } from '../../_components/primary-button/primary-button';
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule, NgStyle } from '@angular/common';
 import { Certificado } from '../../interfaces/certificado';
+import { formatDate } from '../../utils/fomatDate';
 
 @Component({
   selector: 'app-certificado-form',
@@ -15,6 +16,7 @@ export class CertificadoForm {
   certificado: Certificado = {
     name: '',
     activities: [],
+    issueDate: '',
   };
   activity: string = '';
 
@@ -41,6 +43,8 @@ export class CertificadoForm {
 
   submit() {
     if (this.isNotValidForm()) return;
+
+    this.certificado.issueDate = formatDate(new Date());
 
     console.log(this.certificado);
   }
