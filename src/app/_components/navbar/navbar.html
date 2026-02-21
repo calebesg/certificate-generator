@@ -7,9 +7,10 @@
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <li class="nav-item d-flex align-items-center">
-          <i class="ph-bold ph-medal active"></i>
+          <i class="ph-bold ph-medal" [ngClass]="{ active: rlaCertificados.isActive }"></i>
           <a
             routerLink="/"
+            #rlaCertificados="routerLinkActive"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             class="nav-link"
@@ -17,9 +18,10 @@
           >
         </li>
         <li class="nav-item d-flex align-items-center ms-3">
-          <i class="ph-bold ph-circles-three-plus"></i>
+          <i class="ph-bold ph-circles-three-plus" [ngClass]="{ active: rlaGerar.isActive }"></i>
           <a
             routerLink="certificado/cadastrar"
+            #rlaGerar="routerLinkActive"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             class="nav-link"

@@ -23,6 +23,8 @@ export class CertificadoForm {
   @ViewChild('form') form!: NgForm;
 
   addActivity() {
+    if (this.activity.length == 0) return;
+
     let existActivity: boolean = this.certificado.activities.includes(this.activity);
 
     if (existActivity) return alert('A atividade já está foi adicinada');

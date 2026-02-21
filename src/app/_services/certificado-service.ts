@@ -9,5 +9,6 @@ export class CertificadoService {
 
   addCertificado(certificado: Certificado): void {
     this.certificados.push({ ...certificado });
+    localStorage.setItem('app@certificados', JSON.stringify(this.certificados));
   }
 }
