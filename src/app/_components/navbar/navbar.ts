@@ -8,12 +8,4 @@ import { NgClass } from '@angular/common';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar implements OnInit {
-  ngOnInit(): void {
-    this.mensagem();
-  }
-
-  mensagem() {
-    //console.log("Componente Inicializado com Sucesso!");
-  }
-}
+export class Navbar {}

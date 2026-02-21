@@ -1,7 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { SecondaryButton } from '../../_components/secondary-button/secondary-button';
 import { PrimaryButton } from '../../_components/primary-button/primary-button';
-import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule, NgStyle } from '@angular/common';
 import { Certificado } from '../../interfaces/certificado';
 import { formatDate } from '../../utils/fomatDate';
@@ -23,8 +23,6 @@ export class CertificadoForm {
     private certificadoService: CertificadoService,
     private route: Router,
   ) {}
-
-  // @ViewChild('form') form!: NgForm;
 
   addActivity() {
     if (this.activity.length == 0) return;
