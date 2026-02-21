@@ -5,6 +5,7 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule, NgStyle } from '@angular/common';
 import { Certificado } from '../../interfaces/certificado';
 import { formatDate } from '../../utils/fomatDate';
+import { CertificadoService } from '../../_services/certificado-service';
 
 @Component({
   selector: 'app-certificado-form',
@@ -19,6 +20,8 @@ export class CertificadoForm {
     issueDate: '',
   };
   activity: string = '';
+
+  constructor(private certificadoService: CertificadoService) {}
 
   addActivity() {
     let existActivity: boolean = this.certificado.activities.includes(this.activity);
@@ -45,6 +48,8 @@ export class CertificadoForm {
     if (this.isNotValidForm()) return;
 
     this.certificado.issueDate = formatDate(new Date());
+
+    this.certificadoService.addCertificado(this.certificado);
 
     console.log(this.certificado);
   }
