@@ -3,7 +3,10 @@
     <i class="ph-bold ph-arrow-left" aria-hidden="true"></i>
     <span>Voltar</span>
   </a>
-  <app-secondary-button></app-secondary-button>
+  <app-secondary-button
+    textButton="Download"
+    phClass="ph ph-download-simple"
+  ></app-secondary-button>
 </div>
 
 <main class="certificado d-flex justify-content-center align-items-center">
@@ -15,7 +18,7 @@
       <p>Este certificado comprova que</p>
     </header>
 
-    <h2>Ana Silva Lopes</h2>
+    <h2>{{ certificado?.name }}</h2>
 
     <section class="certificado_description">
       <p class="certificado_description--title">Concluiu com sucesso as seguintes atividades:</p>
@@ -27,7 +30,9 @@
     </section>
 
     <footer class="certificado-rodape">
-      <p>Emitido em <time datetime="2025-04-25">25/04/2025</time></p>
+      <p>
+        Emitido em <time datetime="2025-04-25">{{ certificado?.issueDate }}</time>
+      </p>
       <img src="certificate/certificate_signature.svg" alt="assinatura do responsável" />
     </footer>
   </article>

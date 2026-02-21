@@ -70,7 +70,11 @@
 } @else if (certificados.length > 0) {
   <ul class="lista-certificados">
     @for (certificado of certificados; track $index) {
-      <app-item-certificado></app-item-certificado>
+      <app-item-certificado
+        [name]="certificado.name"
+        [data]="certificado.issueDate"
+        [id]="certificado.id"
+      ></app-item-certificado>
     }
   </ul>
 }
