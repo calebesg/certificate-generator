@@ -4,12 +4,13 @@
     <span>Voltar</span>
   </a>
   <app-secondary-button
+    (click)="donwloadCertificado()"
     textButton="Download"
     phClass="ph ph-download-simple"
   ></app-secondary-button>
 </div>
 
-<main class="certificado d-flex justify-content-center align-items-center">
+<main #certificadoHTML class="certificado d-flex justify-content-center align-items-center">
   <img src="certificate/certificate_ribbon.png" aria-hidden="true" />
 
   <article class="certificado-conteudo">
