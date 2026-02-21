@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { SecondaryButton } from '../../_components/secondary-button/secondary-button';
 import { PrimaryButton } from '../../_components/primary-button/primary-button';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { CommonModule, NgStyle } from '@angular/common';
 import { Certificado } from '../../interfaces/certificado';
 import { formatDate } from '../../utils/fomatDate';
 import { CertificadoService } from '../../_services/certificado-service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-certificado-form',
@@ -14,14 +15,12 @@ import { CertificadoService } from '../../_services/certificado-service';
   styleUrl: './certificado-form.css',
 })
 export class CertificadoForm {
-  certificado: Certificado = {
-    name: '',
-    activities: [],
-    issueDate: '',
-  };
+  certificado: Certificado = this.initialState();
   activity: string = '';
 
   constructor(private certificadoService: CertificadoService) {}
+
+  @ViewChild('form') form!: NgForm;
 
   addActivity() {
     let existActivity: boolean = this.certificado.activities.includes(this.activity);
@@ -47,10 +46,23 @@ export class CertificadoForm {
   submit() {
     if (this.isNotValidForm()) return;
 
+    this.certificado.id = uuidv4();
     this.certificado.issueDate = formatDate(new Date());
 
     this.certificadoService.addCertificado(this.certificado);
 
-    console.log(this.certificado);
+    this.certificado = this.initialState();
+    this.form.resetForm();
+
+    console.log(this.certificadoService.certificados);
+  }
+
+  initialState(): Certificado {
+    return {
+      id: '',
+      name: '',
+      activities: [],
+      issueDate: '',
+    };
   }
 }

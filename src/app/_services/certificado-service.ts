@@ -8,6 +8,6 @@ export class CertificadoService {
   certificados: Certificado[] = [];
 
   addCertificado(certificado: Certificado): void {
-    this.certificados = [...this.certificados, certificado];
+    this.certificados.push({ ...certificado });
   }
 }
